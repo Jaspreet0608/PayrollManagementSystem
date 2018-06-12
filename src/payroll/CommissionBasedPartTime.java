@@ -7,13 +7,35 @@ package payroll;
 
 /**
  *
- * @author Narinder
+ * @author macstudent
  */
-public class CommissionBasedPartTime extends Parttime{
-    
-    
-    public CommissionBasedPartTime(int rate, int hourworked, String Name, int[] employeeid, int age, float calculatebirthyear, float calculateearnings) {
-        super(rate, hourworked, Name, employeeid, age, calculatebirthyear, calculateearnings);
-    }
-    
+
+    public class CommissionBasedPartTime extends PartTime implements IPrintable{
+	private int commissionPerc;
+
+	public float getCommissionPerc() {
+		return commissionPerc;
+	}
+
+	public void setCommissionPerc(int commissionPerc) {
+		this.commissionPerc = commissionPerc;
+	}
+	
+	public Float calcEarnings() {
+		return (getHoursWorked()*getRate())+((getHoursWorked()*getRate())*getCommissionPerc())/100;
+	}
+	
+	@Override
+	public void printMyData() {
+		String employeeType = "Employee is PartTime / Commissioned"; 
+		super.printMyData();
+		System.out.println(employeeType);
+		System.out.println("-Earnings: " + calcEarnings() 
+			+ "(" + getHoursWorked() * getRate()+ " + "+getCommissionPerc() + "%)");
 }
+
+        private Integer getHoursWorked() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+

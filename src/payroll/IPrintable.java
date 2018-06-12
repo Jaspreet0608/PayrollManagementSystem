@@ -9,13 +9,6 @@ package payroll;
  *
  * @author macstudent
  */
-public class Payroll {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+public interface IPrintable {
+    public void printMyData();
 }
