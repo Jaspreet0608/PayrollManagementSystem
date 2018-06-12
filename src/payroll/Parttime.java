@@ -7,41 +7,38 @@ package payroll;
 
 /**
  *
- * @author Narinder
+ * @author macstudent
  */
-public class Parttime extends Employee {
-    private int rate;
-    private int hourworked;
-    
+public class PartTime {
+    private Integer hoursworked;
+    private Integer rate;
 
-
-    public Parttime(int rate, int hourworked, String Name, int[] employeeid, int age, float calculatebirthyear, float calculateearnings) {
-        super(Name, employeeid, age, calculatebirthyear, calculateearnings);
+    public PartTime(Integer hoursworked, Integer rate) {
+        this.hoursworked = hoursworked;
         this.rate = rate;
-        this.hourworked = hourworked;
     }
     
     
 
-    
-   
-    public int getRate() {
+    public Integer getHoursworked() {
+        return hoursworked;
+    }
+
+    public void setHoursworked(Integer hoursworked) {
+        this.hoursworked = hoursworked;
+    }
+
+    public Integer getRate() {
         return rate;
     }
 
-    public void setRate(int rate) {
+    public void setRate(Integer rate) {
         this.rate = rate;
     }
 
-    public int getHourworked() {
-        return hourworked;
+    void printMyData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public void setHourworked(int hourworked) {
-        this.hourworked = hourworked;
-    }
-    
-    
     
     
 }
